@@ -1,0 +1,253 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>MuhammadJ - Python Movie Correlation</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">Project 2</a>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li><a href="index.html"> Home Page</a></li>
+							<li><a href="Projects.html"> Projects</a></li>
+							<li class="active"><a href="generic.html">Project 2</a></li>
+							<li><a href="resources.html">Resources</a></li>
+						</ul>
+						<ul class="icons">
+							<li><a href="https://www.linkedin.com/in/muhammad-jhetam/" class="icon brands fa-linkedin"><span class="label">fa-linkedin</span></a></li>
+							<li><a href="https://github.com/MuhammadJ24" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+				
+									<h1>Movie Industry Correlation<br />
+									in Python using Pandas</h1>
+									<p>In this project movie industry data between the years 1980 and 2020 <br/> 
+										was cleaned, prepared and the analysed for correlations between fields using the
+                                        python libraries: Pandas, matplotlib, seaborn and numpy.
+                                    </p>
+								</header>
+								<div class="image main"><img src="images/movies.jpg" style='max-width:100%;height:auto;' alt="" /></div>
+								<h2><b>Introduction</b></h2>
+								<p> The  Movie dataset used in this project was obtained on <a href="https://www.kaggle.com/" target="_blank">Kaggle.com</a>.
+									 The actual dataset that was used can be found here, 
+									<a href="https://www.kaggle.com/datasets/danielgrijalvas/movies" target="_blank"> Movie Industry Dataset</a>.
+								<br>
+								</p>
+								The code base for this project can also be found in my 
+									<a href="https://github.com/MuhammadJ24/PortfolioProjects/blob/main/MovieCorrelation.ipynb" target="_blank">Github Repository</a>.
+								<br>
+
+								<br>
+								<h2>Preparation</h2>
+								<br>
+
+								<h3>Imports</h3>
+								<p>	
+								The first step of this project was to import all of the Python Libraries needed into the Jupyter Notebook we're using.
+								I also added some lines of code to configure and set the style of the plots that will be created at the analysis stage in this project.
+								The final part of our initial step is to import the dataset that will be used. 
+								</p>
+								<div style="text-align: center;"><script src="https://gist.github.com/MuhammadJ24/df27cbce5491efa78be900d9f21c777c.js"></script></div>
+								<br>
+
+								<h3>First Inspection</h3>
+								<p> It is always good practise to have inspect at your dataset after importing it into python. Here we visually inspect for any,
+									<i>Nulls</i>, errors or inconsistencies, etc., in the data so that we know how to clean the dataset. 
+									<br>Below is a preview of our initial dataset.
+								</p>
+								<div style="text-align: center;"><script src="https://gist.github.com/MuhammadJ24/5914c8ad608199644ceef0a05a184066.js"></script></div>
+								<div style="text-align: center;"><img  src="images/datapreview_movies.JPG" style='max-width:100%;height:auto;' alt="" /></div>
+								<br>
+
+								<br>
+								<h2>Data Cleaning</h2>
+								<br>
+								<h3>Checking/Removing Null entries</h3>
+								<p> In the case of this project, movies that had <i>Null</i> entries were not considered to ensure an 
+									accurate correlation analysis between them. Before removing these rows of data we first need
+									to check if they even exist. The percentage of <i>Null</i> entries in each column of our initial dataset
+									is shown below. 
+								</p>
+								<div style="text-align: center;"><script src="https://gist.github.com/MuhammadJ24/64d3be18e87d3ba90c78966d02a87f35.js"></script></div>
+								<div style="text-align: center;"><img  src="images/checknulls_movies.JPG" style='max-width:100%;height:auto;' alt="" /></div>
+								<br>
+								<p>These <i>Null</i> entries were then removed from the dataset. After which we run check
+								to see if the removal was indeed successful. </p>
+								<div style="text-align: center;"><script src="https://gist.github.com/MuhammadJ24/c9dd99d061855c97f1ee910c56fc9e7a.js"></script></script></div>
+								<div style="text-align: center;"><img  src="images/dropnulls_movies.JPG" style='max-width:100%;height:auto;' alt="" /></div>
+								<br>
+							
+								
+								<h3>Standardization of Data</h3>
+								<p> It was observed that the <i>budget</i>,<i>gross</i> and <i>votes</i> columns in our datset were
+									formatted as the <i>float64</i> data type with a single decimal place of <i>.0</i> at the end of each entry.
+									However, none of these columns contained a <i>float64</i> value that had a decimal other than
+									<i>0</i>, which means the decimals are not needed. Therefore, these columns were converted into the <i>int64</i> to drop the unnecessary
+									decimals and save storage space(however small the difference, it is a good practise).   
+								</p>
+								<div style="text-align: center;"><script src="https://gist.github.com/MuhammadJ24/0d393af73db807e2f3e0381c31e5531b.js"></script></div>
+								<br>
+
+
+								<h3>Checking for and removing Duplicates</h3>
+								<p> The dataset was then checked for duplicate entries, of which there were none.
+								</p>
+								<div style="text-align: center;"><script src="https://gist.github.com/MuhammadJ24/ca9d06d1169dd89e87c835ab8c91fc21.js"></script></div>
+								<br>
+
+								<h3>Dataset ordering</h3>
+								<p> 
+									The last step in the data cleaning/preparation phase of the project was to order the movies in our data
+									in decending order of their gross earnings. This makes our analysis in the next phase simpler.
+									The 5 highest grossing movies in the dataset can be seen below.
+								</p>
+								<div style="text-align: center;"><script src="https://gist.github.com/MuhammadJ24/c9a5d6dc1da9f39bc3bc0fed4c03a4f9.js"></script></div>
+								<div style="text-align: center;"><img  src="images/sort_movies.JPG" style='max-width:100%;height:auto;' alt="" /></div>
+								<br>
+
+								<br>
+								<h2>Analysis</h2>
+								<br>
+								<p>
+									The code for this section is not shown, but can be found here: 	 
+									<a href="https://github.com/MuhammadJ24/PortfolioProjects/blob/main/MovieCorrelation.ipynb" target="_blank">Github Repository</a>.
+								</p>
+								<br>
+								<h3>Budget vs. Gross Earnings</h3>
+								<p> 
+									The budget to make a movie and the gross earnings of that movie
+									 have a strong correlation. That was the first hypothesis analysed in this project.
+									 To do this, the <i>budget</i> and <i>gross</i> fields of the dataset were plotted 
+									 against each other.
+								</p>
+								<div style="text-align: center;"><img  src="images/bvg_movies.JPG" style='max-width:100%;height:auto;' alt="" /></div>
+								<br>
+								<p>
+									Based of this graphic there seems to be a correlation between the movie's budget and 
+									its earnings. However, let us confirm this with a regression plot.
+								</p>
+								<div style="text-align: center;"><img  src="images/regplt_movies.JPG" style='max-width:100%;height:auto;' alt="" /></div>
+								<br>
+								<p>
+									As can be seen there is clearly a fairly strong correlation between the movie's budget and 
+									its gross earnings. The higher the budget, the higher the earnings of the movie tends to be.
+									<br>
+									<br>
+									The correlation between a movie's budget and it gross earnings make sense, in that the a higher budget 
+									may be linked to movie having a better cast, equipment, special effects(if required), better filming locations and even better
+									the creation of better scenes in the case of adventure, action and other movies related to those. 
+								</p>
+
+
+								<h3>General Correlation</h3>
+								<p> 
+									In this section, a correlation matrix was used to comapre all "numerical" type entries
+									in the dataset against each other, to look for any correlations between them.
+								</p>
+								<div style="text-align: center;"><img  src="images/cormatrix_movies.JPG" style='max-width:100%;height:auto;' alt="" /></div>
+								<br>
+
+								<p>
+									In the above table, there is a fairly strong correlation between the <i>budget</i>
+									and <i>gross</i> of each movie, as seen earlier. <br>
+									<br>
+									There is also a moderately strong correlation between the <i>gross</i> and <i>votes</i> of each movie.
+									This is an unsuprising trend, the <i>votes</i> are an idication of a positive response from 
+									the general viewer. It makes sense that the more <i>votes</i> a movie receives from fans, the higher the earnings 
+									of the movie tends to be. <br>
+									<br>
+									Interestingly, the correlation matrix shows that there is a moderately weak correlation
+									between the fans <i>votes</i> and the rating <i>score</i> given by movie critics. This means that the rating <i>score</i> 
+									of a movie given by critics does not have a strong impact on whether or not fans vote for the movie, i.e, they think that its good. <br>
+									<br>
+									The rating <i>score</i> given to movie also has a very weak correlation to the gross earnings
+									of the movie, it can be said that the rating <i>score</i> of a movie has little, to no impact on its earnings
+
+								</p>
+								
+								<h3>Highest Grossing companies</h3>
+								<p> 
+									For last part of our analysis, I found the <i>Top 10 Grossing Companies</i> from 
+									1980 to 2020.
+								</p>
+								<div style="text-align: center;"><img  src="images/top_companies_movies.JPG" style='max-width:100%;height:auto;' alt="" /></div>
+								<br>
+								<p> 
+									There is an extremely large gap in revenue between the most successful companies and companies lower on this list. 
+
+								</p>
+
+
+								<h3>Final Remarks</h3>
+								<p>This project required a variety of data cleaning and preparation techniques in python, before
+									allowing us to perform an analysis on the movie industry, which yielded valuable insight on
+									correlations between factors surrounding movies and their grossings. <br>
+									The <i>Budget</i> and <i>Viwer approval</i> of a movie tend to be its biggest contributors
+									to it being a high grossing movie. <br>
+									It was also found that the <i>Critic Rating Score</i> does not have a strong influence
+									on its grossings. <br>
+									<br>
+									The code base to this entire project can be found here: 
+									<a href="https://github.com/MuhammadJ24/PortfolioProjects/blob/main/MovieCorrelation.ipynb" target="_blank">Github Repository</a>.
+								</p>
+							</section>
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						
+						<section class="split contact">
+							
+							<section>
+								<h3>Social</h3>
+								<ul class="icons alt">
+									<li><a href="https://www.linkedin.com/in/muhammad-jhetam/" class="icon brands fa-linkedin"><span class="label">fa-linkedin</span></a></li>
+									<li><a href="https://github.com/MuhammadJ24" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+								</ul>
+							</section>
+						</section>
+					</footer>
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>&copy; MuhammadJ24</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

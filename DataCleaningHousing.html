@@ -1,0 +1,161 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>MuhammadJ - Data Cleaning in SQL</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">Project 1</a>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li><a href="index.html"> Home Page</a></li>
+							<li><a href="Projects.html"> Projects</a></li>
+							<li class="active"><a href="generic.html">Project 1</a></li>
+							<li><a href="resources.html">Resources</a></li>
+						</ul>
+						<ul class="icons">
+							<li><a href="https://www.linkedin.com/in/muhammad-jhetam/" class="icon brands fa-linkedin"><span class="label">fa-linkedin</span></a></li>
+							<li><a href="https://github.com/MuhammadJ24" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+				
+									<h1>Data Cleaning<br />
+									in SQL</h1>
+									<p>In this project Housing Data of properties in Nashville, Tennessee, <br/> 
+										was cleaned and prepared for possible analysis and visualization in the future.</p>
+								</header>
+								<div class="image main"><img src="images/Housing.jpg" style='max-width:100%;height:auto;' alt="" /></div>
+								<h2><b>Introduction</b></h2>
+								<p> The  Nashville, Tennessee dataset used in this project was obtained on Github and was inspired by the creator, 
+									<a href="https://github.com/AlexTheAnalyst" target="_blank">AlexTheAnalyst.</a> The actual dataset that was used can be found here, 
+									<a href="https://github.com/AlexTheAnalyst/PortfolioProjects/blob/main/Nashville%20Housing%20Data%20for%20Data%20Cleaning.xlsx" target="_blank"> Nashville Housing Dataset</a>.
+								<br>
+								</p>
+								The code base for this project can also be found in my 
+									<a href="https://github.com/MuhammadJ24/PortfolioProjects/blob/main/SQLDataCleaningNH.sql" target="_blank">Github Project Repository</a>.
+								<br>
+
+								<br>
+								<h2>Data Cleaning</h2>
+								<br>
+
+								<h3>Date Reformatting</h3>
+								<p>The first step in this project was to reformat the sale date of the properties in the dataset.
+									Initially the sale date also included the time of the sale down to the milli-second! For example, <i>2013-04-09   00:00:00.000</i>.
+									It's also worth noting that none of these times had any values assigned to them. I reformatted the sale date to be more usable 
+									and sensible. The result yielding a sale date, <i>2013-04-09 </i>. The SQL code used to achieved this is showed below.
+								</p>
+								<div style="text-align: center;">
+									<script src="https://gist.github.com/MuhammadJ24/7e838cf4ce48a20297fbc19d41efb662.js"></script>
+								</div>
+								<br>
+
+								<h3>Populating Nulls</h3>
+								<p> The dataset also had a few null entries in the <i>Property Address</i> column. Luckily for me, I was able to populate these <i>nulls</i>
+									by finding their corresponding duplicates, which had values for those <i>null</i> entries.
+									The code is shown below:
+								</p>
+								<div style="text-align: center;"><script src="https://gist.github.com/MuhammadJ24/122853908d2b10ce678544ff8d6c7438.js"></script></div>
+								<br>
+
+
+								<h3>Separating columns</h3>
+								<p> Some columns contained valuable information, however, this information would have been
+									hard to make use of because of the column's structure. Examples of this inlude: The <i>Property Address</i> column
+									containing both the <i>address</i> and <i>city</i> of the property in a single column. Ideally we would have these in separate columns.
+									Similarly, the <i>Owner Address</i> column contained the <i>Address</i>, <i>City</i> and <i>State</i> of residence of each owner in a single column. 
+									I seperated each of these into seperate columns for better usability.
+								</p>
+								<p>Separting the <i>PropertyAddress</i> column into <i>PropertyAddress</i> and <i>PropertyCity</i> columns:</p>
+								<div style="text-align: center;"><script src="https://gist.github.com/MuhammadJ24/ef2148445ccb51031a525cfa2bcf77dc.js"></script></div>
+								<br>
+								<p>Separting the <i>OwnerAddress</i> column into <i>OwnerAddress</i>, <i>OwnerCity</i> and <i>OwnerState</i> columns:</p>
+								<div style="text-align: center;"><script src="https://gist.github.com/MuhammadJ24/9ec9521f2eb64eb451f02d3192482fab.js"></script></div>
+								<br>
+							
+								
+								<h3>Standardization of Data</h3>
+								<p> The column indicating whether or not a property was vacant when it was sold had some inconsistencies.
+									The entries <i>Y</i> and <i>Yes</i> both indicate that the property was indeed vacant, while the entries
+									<i>N</i> and <i>No</i> both indicate that the property was occupied rather than vacant. I standardized these values
+									to only indicate either a <i>Yes</i> or <i>No</i> value for consistency.  
+								</p>
+								<div style="text-align: center;"><script src="https://gist.github.com/MuhammadJ24/25f353b09f712739542a0e87e7dc32e3.js"></script></div>
+								<br>
+
+
+								<h3>Removing Duplicates</h3>
+								<p> The last step of this project was removing duplicate entries from the dataset. 
+									This step delayed until now, to allow us to fill in the <i>Null entries</i> as mentioned 
+									earlier in the project. 
+								</p>
+								<div style="text-align: center;"><script src="https://gist.github.com/MuhammadJ24/4585833dd02bf668f995f5202368f0fc.js"></script></div>
+								<br>
+
+								<h2>Final Remarks</h2>
+								<p> After performing these data cleaning techniques, a clean, stadardized and highly usable 
+									dataset is ready for analysis and visualization in a possible future project. <br>
+									The code base for the entire project can be found here: 
+									<a href="https://github.com/MuhammadJ24/PortfolioProjects/blob/main/SQLDataCleaningNH.sql" target="_blank">Github Project Repository</a>.
+								</p>
+							</section>
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						
+						<section class="split contact">
+							
+							<section>
+								<h3>Social</h3>
+								<ul class="icons alt">
+									<li><a href="https://www.linkedin.com/in/muhammad-jhetam/" class="icon brands fa-linkedin"><span class="label">fa-linkedin</span></a></li>
+									<li><a href="https://github.com/MuhammadJ24" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+								</ul>
+							</section>
+						</section>
+					</footer>
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>&copy; MuhammadJ24</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

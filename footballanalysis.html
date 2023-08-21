@@ -1,0 +1,231 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>MuhammadJ - Football Analysis</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">Project 4</a>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li><a href="index.html"> Home Page</a></li>
+							<li><a href="Projects.html"> Projects</a></li>
+							<li class="active"><a href="generic.html">Project 4</a></li>
+							<li><a href="resources.html">Resources</a></li>
+						</ul>
+						<ul class="icons">
+							<li><a href="https://www.linkedin.com/in/muhammad-jhetam/" class="icon brands fa-linkedin"><span class="label">fa-linkedin</span></a></li>
+							<li><a href="https://github.com/MuhammadJ24" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+				
+									<h1>Football 21-22 Season Analysis<br />
+									in SQL and Tableau</h1>
+									<p>In this project data on the 21-22 Football season of Europe's top 5 leagues was analysed
+										in SQL.<br>
+                                        The insights generated from this analysis were then visualized in Tableau through
+                                        the use of a dashboard.
+                                    </p>
+								</header>
+								<div class="image main"><img src="images/footballcover2.jpg" style='max-width:100%;height:auto;' alt="" /></div>
+								<h2><b>Introduction</b></h2>
+								<p> The analysis done in this project focused on stats of both players and teams in Europe's Top 5
+                                    football leagues over the course of the 21-22 season. This includes the Premier League of England,
+                                    <i> La Liga </i> of Spain, The <i>Bundesliga</i> of Germany, <i>Serie A</i> of Italy and 
+                                    <i>Ligue 1</i> of France.
+
+                                    <br>
+
+                                    The datasets used were obtained on <a href="https://www.kaggle.com/" target="_blank">Kaggle.com</a> and can be found using the following links:  
+									<a href="https://www.kaggle.com/datasets/vivovinco/20212022-football-team-stats/code" target="_blank">Football Team Stats 21-22</a>, 
+                                    <a href="https://www.kaggle.com/datasets/vivovinco/20212022-football-player-stats" target="_blank">Football Player Stats 21-22</a>.
+
+								<br>
+								</p>
+								The SQL code base for the entire project can also be found in my 
+									<a href="https://github.com/MuhammadJ24/PortfolioProjects/blob/main/SQLFootball21_22.sql" target="_blank">Github Project Repository</a>.
+								<br>
+								The dashboards for this project can be found here: 
+								<a href="https://public.tableau.com/views/Football21-22Dashboard1/Dashboard1?:language=en-US&:display_count=n&:origin=viz_share_link" target="_blank">Football 21-22 Dashboard 1</a>, 
+                                <a href="https://public.tableau.com/views/Football21-22Dashboard2/Dashboard2?:language=en-US&:display_count=n&:origin=viz_share_link" target="_blank">Football 21-22 Dashboard 2</a>.
+								
+								<br>
+
+								<br>
+								<br>
+								<h2>Data Preparation</h2>
+				
+                                <p>
+									The datasets used in this project were formatted in Microsoft Excel. 
+								</p>
+
+								<h3>Data Formatting</h3>
+								<p>
+									All entries containing numerical values had their data type changed to a numerical data type
+                                    , similarly the data type of all cells containing non-numerical data was changed accordingly. <br>
+                                    All periods '<i>.</i>' were changed to commas '<i>,</i>' in the decimal part of numerical entries. 
+                                    This was done to correct a error, that
+                                    was faced in SQL Server, where some numerical values containing periods '<i>.</i>' as a decimal point
+                                     were displayed as <i>Nulls</i>. Changing the decimal points into commas '<i>,</i>' 
+                                     fixed this problem.
+
+								</p>
+								
+                                <h3>Data Inspection</h3>
+                                <p>
+                                    The database was checked for <i>Null</i> entries, there were none.
+                                </p>
+                                <br>
+
+								<h2>Data Analysis</h2>
+								
+									The data analysis in this project was done using SQL queries in SQL Server.
+									Queries to the following were carried out: 
+									<br>
+									<ul>
+										<li>Find the top scorer/scorers of each of the top 5 leagues.</li>
+										<div style="text-align: center;"><script src="https://gist.github.com/MuhammadJ24/922caab9e331a22338a9ab909fabe850.js"></script></div>
+										<br>
+                                        <li>Players that played the most minutes in the top 5 leagues per position
+                                            (Foward, midfield, defense and goalkeeper).
+                                        </li>
+										<div style="text-align: center;"><script src="https://gist.github.com/MuhammadJ24/5b35ce2892cb517b354b3effd10ffb30.js"></script></div>
+										<br>
+                                        <li>Compare important stats of top three teams in each league such as points earned,
+                                             goals scored, matches played, points per game, etc.
+                                        </li>
+										<div style="text-align: center;"><script src="https://gist.github.com/MuhammadJ24/f8d3b717c4ae9e501b011fbc75f35177.js"></script></div>
+										<br>
+                                        <li>Finding the winning team of each of the top 5 leagues and their key players.</li>
+										<div style="text-align: center;"><script src="https://gist.github.com/MuhammadJ24/3d8ffb1071b532fe5af74e6710038c50.js"></script></div>
+									</ul>
+
+								<br>
+                                <br>
+								<h2>Data Visualization</h2>
+								<p>
+									Using the above queries , the data was visualized to create
+									a brief summary of my findings in this project.
+									using Tableau to create two interactive dashboards, the first sumarizing key takeaways
+                                    from the 21-22 football season across europe's top 5 leagues. The second dashboard 
+                                    contains a more in-depth look at the important stats of the top 3 teams in these leagues.
+								</p>
+							
+								
+
+							</section>
+
+                            <h3>Football 21-22 Overview Dashboard</h3>  
+							<div class='tableauPlaceholder' id='viz1692614549655' style='position: relative'><noscript><a href='#'><img alt='Dashboard 1 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Fo&#47;Football21-22Dashboard1&#47;Dashboard1&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='Football21-22Dashboard1&#47;Dashboard1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Fo&#47;Football21-22Dashboard1&#47;Dashboard1&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1692614549655');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='1143px';vizElement.style.height='528px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='1143px';vizElement.style.height='528px';} else { vizElement.style.width='100%';vizElement.style.height='1177px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+						<!--	
+                    		<script type='text/javascript' src='https://public.tableau.com/javascripts/api/viz_v1.js'>  
+                    		</script>
+                    		<object class='tableauViz' width='1120' height='800' style='max-width:100%;max-height:100%;' name='viz'>
+                    		<param name='host_url' value='http://public.tableau.com/' />  
+                    		<param name='site_root' value='' />  
+                    		<param name='name' value='Football21-22Dashboard1/Dashboard1' />
+                    		</object>
+							-->
+
+                            <h3>Football 21-22 In-Depth Teams Dashboard</h3>  
+							<div class='tableauPlaceholder' id='viz1692614631198' style='position: relative'><noscript><a href='#'><img alt='Dashboard 2 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Fo&#47;Football21-22Dashboard2&#47;Dashboard2&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='Football21-22Dashboard2&#47;Dashboard2' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Fo&#47;Football21-22Dashboard2&#47;Dashboard2&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1692614631198');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='1143px';vizElement.style.height='528px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='1143px';vizElement.style.height='528px';} else { vizElement.style.width='100%';vizElement.style.height='727px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+						<!--
+                    		<script type='text/javascript' src='https://public.tableau.com/javascripts/api/viz_v1.js'>  
+                    		</script>
+                    		<object class='tableauViz' width='1120' height='800' style='max-width:100%;max-height:100%;' name='viz'>
+                    		<param name='host_url' value='http://public.tableau.com/' />  
+                    		<param name='site_root' value='' />  
+                    		<param name='name' value='Football21-22Dashboard2/Dashboard2' />
+                    		</object>
+							-->	
+							
+								<br>
+								<h2>Final Remarks</h2>
+								<p> The visualizations created in this project give us valubale insight on the best performing
+                                    teams and their key players in the considered leagues. For instance, the top scorer in each 
+                                    league tends to be playing for the team winning the league as seen with 4/5 of the leagues.
+                                    <br>
+                                    Another valuabe insight is that of the outfield players that played the most minutes across all the leagues, 
+                                    these players were from the 2 'smallest' leagues in consideration namely, 
+                                    <i>Serie A</i>(Italy) and <i>Ligue 1</i>(France), and the teams they were from included 
+                                    <i>Cagliari</i>(<i>Serie A</i>), <i>Lens</i>(<i>Ligue 1</i>) and <i>Lille</i>(<i>Ligue 1</i>)
+                                    all of which a cosidered to be mid-low ranked teams in their specific leagues. Outfield players from these 
+                                    teams playing the number of minutes that they have could be an indication of a lack of squad depth 
+                                    in those positions.
+									<br>
+									<br>
+									The SQL code base for the entire project can also be found here: 
+									<a href="https://github.com/MuhammadJ24/PortfolioProjects/blob/main/SQLFootball21_22.sql" target="_blank">Github Project Repository</a>.
+								    <br>
+								    The dashboards for this project can be found here: 
+								    <a href="https://public.tableau.com/views/Football21-22Dashboard1/Dashboard1?:language=en-US&:display_count=n&:origin=viz_share_link" target="_blank">Football 21-22 Dashboard 1</a>, 
+                                    <a href="https://public.tableau.com/views/Football21-22Dashboard2/Dashboard2?:language=en-US&:display_count=n&:origin=viz_share_link" target="_blank">Football 21-22 Dashboard 2</a>.
+								
+								</p>
+							
+
+
+
+
+
+
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						
+						<section class="split contact">
+							
+							<section>
+								<h3>Social</h3>
+								<ul class="icons alt">
+									<li><a href="https://www.linkedin.com/in/muhammad-jhetam/" class="icon brands fa-linkedin"><span class="label">fa-linkedin</span></a></li>
+									<li><a href="https://github.com/MuhammadJ24" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+								</ul>
+							</section>
+						</section>
+					</footer>
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>&copy; MuhammadJ24</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>MuhammadJ - COVID Exploration</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">Project 3</a>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li><a href="index.html"> Home Page</a></li>
+							<li><a href="Projects.html"> Projects</a></li>
+							<li class="active"><a href="generic.html">Project 3</a></li>
+							<li><a href="resources.html">Resources</a></li>
+						</ul>
+						<ul class="icons">
+							<li><a href="https://www.linkedin.com/in/muhammad-jhetam/" class="icon brands fa-linkedin"><span class="label">fa-linkedin</span></a></li>
+							<li><a href="https://github.com/MuhammadJ24" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+				
+									<h1>Covid Data Exploration<br />
+									in SQL and Tableau</h1>
+									<p>In this project data exploration on the Covid-19 pandemic was conducted in SQL.<br>
+                                        Insights generated from this exploration were then visualized in Tableau through
+                                        the use of a dashboard.
+                                    </p>
+								</header>
+								<div class="image main"><img src="images/cover_covid.jpg" style='max-width:100%;height:auto;' alt="" /></div>
+								<h2><b>Introduction</b></h2>
+								<p> The exploration done in this project was inpired by Data Analyst and Youtube creator, 
+									<a href="https://github.com/AlexTheAnalyst" target="_blank">AlexTheAnalyst.</a> 
+                                    <br> The dataset that was used can be found using the following link:  
+									<a href="https://ourworldindata.org/covid-deaths" target="_blank">CoronaVirus (Covid-19) Info</a>.
+								<br>
+								</p>
+								The SQL code base for the entire project can also be found in my 
+									<a href="https://github.com/MuhammadJ24/PortfolioProjects/blob/main/COVID%20Portfolio%20Project.sql" target="_blank">Github Project Repository</a>.
+								<br>
+								The dashboard for this project can be found here: 
+								<a href="https://public.tableau.com/views/COVIDDashboard1_16908898813070/Dashboard1?:language=en-US&:display_count=n&:origin=viz_share_link" target="_blank">Tableau Public Covid Dashboard</a>.
+								
+								<br>
+
+								<br>
+								<br>
+								<h2>Data Preparation</h2>
+								
+								<p>Before beginning the data exploration phase of this project, the dataset in consideration had to be
+									prepared to make it simpler to work with.</p>
+								
+
+								<h3>Importing Data</h3>
+								<p>
+									The first step in the data preparation process after downloading the excel file containing the data,
+									was to split the data in the file into two separate excel files. 
+									The first file contains information on covid infection rates and deaths, the second,
+									containing information on covid vaccinations, along with some other information. <br>
+								</p>
+								
+
+								<h3>Database Restructuring</h3>
+								<p>
+									Columns that were more 'relevant' in this project where moved to keep all important fields
+									close together, making it easier to observe the data we'd like to observe. This is not necessary, 
+									however, I prefer this structure.
+								</p>
+								<br>
+
+								<h2>Data Exploration</h2>
+								
+									The data exploration in this project was done using SQL queries in SQL Server.
+									Queries to the following were carried out: 
+									<br>
+									<ul>
+										<li>Total Cases vs. Total Deaths internationally and in South Africa.</li>
+										<div style="text-align: center;"><script src="https://gist.github.com/MuhammadJ24/29cc400135260bf15b19270c92109701.js"></script></div>
+										<br>
+										<li>Percentage of population infected per country.</li>
+										<div style="text-align: center;"><script src="https://gist.github.com/MuhammadJ24/ff3c6c3146038f46f2f699913e448367.js"></script></div>
+										<br>
+										<li>Countries with highest infection rate.</li>
+										<div style="text-align: center;"><script src="https://gist.github.com/MuhammadJ24/fcbeada20b888a4bf231d107b07592cb.js"></script></div>
+										<br>
+										<li>Countries with highest death count.</li>
+										<div style="text-align: center;"><script src="https://gist.github.com/MuhammadJ24/8bb337158fcd6bc8492d716b30dc987d.js"></script></div>
+										<br>
+										<li>Continent with highest death count.</li>
+										<div style="text-align: center;"><script src="https://gist.github.com/MuhammadJ24/ef5b607465e0717990dcc9544f58303a.js"></script></div>
+										<br>
+										<li>Overall global death rate.</li>
+										<div style="text-align: center;"><script src="https://gist.github.com/MuhammadJ24/6e9657e3cfa3a4cd719cbe93e90664c9.js"></script></div>
+										<br>
+										<li>Percentage of vaccinated people in a population per country(Done in 2 different
+											ways, first using a CTE and the other making use of a temp table.).</li>
+										<div style="text-align: center;"><script src="https://gist.github.com/MuhammadJ24/818afe25cb5c6552b7bc2c2417ad4d35.js"></script></div>
+									</ul>
+
+								<br>
+								<h2>Data Visualization</h2>
+								<p>
+									Using the above queries (slighlty tweaked at times), the wanted data was visualized to create
+									a brief summary of my findings in this project.
+									using Tableau to create an interactive dashboard as seen below:
+								</p>
+								<br>
+								
+
+							</section>
+
+                            <h3>Covid Data Exploration Dashboard</h3>  
+							<div class='tableauPlaceholder' id='viz1692614288324' style='position: relative'><noscript><a href='#'><img alt='Dashboard 1 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;CO&#47;COVIDDashboard1_16908898813070&#47;Dashboard1&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='COVIDDashboard1_16908898813070&#47;Dashboard1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;CO&#47;COVIDDashboard1_16908898813070&#47;Dashboard1&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1692614288324');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else { vizElement.style.width='100%';vizElement.style.height='1027px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+						<!--	
+                    		<script type='text/javascript' src='https://public.tableau.com/javascripts/api/viz_v1.js'>  
+                    		</script>
+                    		<object class='tableauViz' width='1120' height='800' style='max-width:100%;max-height:100%;' name='viz'>
+                    		<param name='host_url' value='http://public.tableau.com/' />  
+                    		<param name='site_root' value='' />  
+                    		<param name='name' value='COVIDDashboard1_16908898813070/Dashboard1' />
+                    		</object>
+							-->
+								<br>
+								<h2>Final Remarks</h2>
+								<p> This project yielded some interesting insights visualized in the above dashboard, which 
+									include the average percentage of poeple infected over the course of the two year pandemic
+									in the BRICS nations, the total number of deaths per continent and lastly, the percentage 
+									of infected people in each country at the height of the pandemic.
+									<br>
+									<br>
+									The code base for the entire project can be found here: 
+									<a href="https://github.com/MuhammadJ24/PortfolioProjects/blob/main/COVID%20Portfolio%20Project.sql" target="_blank">Github Project Repository</a>.
+									<br>
+									The dashboard for this project can be found here: 
+									<a href="https://public.tableau.com/views/COVIDDashboard1_16908898813070/Dashboard1?:language=en-US&:display_count=n&:origin=viz_share_link" target="_blank">Tableau Public Covid Dashboard</a>.
+								</p>
+							
+
+
+
+
+
+
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						
+						<section class="split contact">
+							
+							<section>
+								<h3>Social</h3>
+								<ul class="icons alt">
+									<li><a href="https://www.linkedin.com/in/muhammad-jhetam/" class="icon brands fa-linkedin"><span class="label">fa-linkedin</span></a></li>
+									<li><a href="https://github.com/MuhammadJ24" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+								</ul>
+							</section>
+						</section>
+					</footer>
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>&copy; MuhammadJ24</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
